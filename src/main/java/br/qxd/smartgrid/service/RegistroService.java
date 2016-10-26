@@ -6,10 +6,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import br.qxd.smartgrid.model.Registro;
 import br.qxd.smartgrid.repository.RegistroRepository;
 
+@Service
 public class RegistroService implements RegistroRepository {
 
 	@Override
@@ -24,7 +26,7 @@ public class RegistroService implements RegistroRepository {
 
 	@Override
 	public List<Registro> findAll() {
-		List<Registro> result = findAll();
+		List<Registro> result = null;
 		return result;
 	}
 
