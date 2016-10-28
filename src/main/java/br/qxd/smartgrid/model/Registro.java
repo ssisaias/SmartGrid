@@ -20,4 +20,29 @@ public class Registro {
 	@Column 
 	private float totalWatts;
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Timestamp getData() {
+		return data;
+	}
+
+	public void setData(Timestamp data) {
+		this.data = data;
+	}
+
+	public float getTotalWatts() {
+		return totalWatts;
+	}
+
+	public void setTotalWatts(float totalWatts) {
+		this.totalWatts = totalWatts;
+	}
+	
+	
 }
