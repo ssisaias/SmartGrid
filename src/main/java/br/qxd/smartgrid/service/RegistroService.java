@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.qxd.smartgrid.model.Registro;
+import br.qxd.smartgrid.model.Usuario;
 import br.qxd.smartgrid.repository.RegistroRepository;
 
 @Service
@@ -14,7 +15,10 @@ public class RegistroService {
 	@Autowired
 	private RegistroRepository regRepo;
 
-
+	public <S extends Registro> S save(S arg0) {
+		S result = regRepo.save(arg0);
+		return result;
+	}
 
 	public List<Registro> findAll() {
 		List<Registro> result = regRepo.findAll();
