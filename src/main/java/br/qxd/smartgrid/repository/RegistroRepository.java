@@ -6,4 +6,5 @@ import br.qxd.smartgrid.model.Registro;
 
 public interface RegistroRepository extends JpaRepository<Registro, Long>{
 
+	
 }
