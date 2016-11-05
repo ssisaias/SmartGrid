@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -22,7 +23,15 @@ public class Registro {
 	
 	@Column 
 	private float totalWatts;
-
+	
+	@Column
+	private String nome;
+	
+	//Tirar o comentario para producao
+//	@Column
+//	@ManyToOne
+//	private Historico_consumo historico;
+	
 	public long getId() {
 		return id;
 	}
@@ -46,6 +55,23 @@ public class Registro {
 	public void setTotalWatts(float totalWatts) {
 		this.totalWatts = totalWatts;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+//	public Historico_consumo getHistorico() {
+//		return historico;
+//	}
+//
+//	public void setHistorico(Historico_consumo historico) {
+//		this.historico = historico;
+//	}
+//	
 	
 	
 }
