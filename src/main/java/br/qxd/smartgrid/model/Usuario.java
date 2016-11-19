@@ -28,12 +28,12 @@ public class Usuario {
 	private String telefone;
 	
 	@OneToOne
-	private Usuario_role papel;
+	private Usuario_papel papel;
 	
 	@Column
-	private boolean active = true;
+	private boolean ativo = true;
 	
-	@Column 
+	@OneToOne
 	private Endereco_usuario endereco_cobranca;
 
 	@Column
@@ -82,20 +82,20 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public Usuario_role getPapel() {
+	public Usuario_papel getPapel() {
 		return papel;
 	}
 
-	public void setPapel(Usuario_role papel) {
+	public void setPapel(Usuario_papel papel) {
 		this.papel = papel;
 	}
 
 	public boolean isActive() {
-		return active;
+		return ativo;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setActive(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	public Endereco_usuario getEndereco_cobranca() {
