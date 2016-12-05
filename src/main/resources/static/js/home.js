@@ -10,11 +10,11 @@ var gaugeChart = AmCharts.makeChart("chartdiv", {
 		"id" : "GaugeArrow-1"
 	} ],
 	"axes" : [ {
-		"bottomText" : "0 kW",
-		"bottomTextYOffset" : -10,
-		"endValue" : 300,
-		"id" : "GaugeAxis-1",
-		"valueInterval" : 0,
+		"bottomText": "kilowatts",
+		"bottomTextYOffset": -20,
+		"endValue": 300,
+		"id": "GaugeAxis-1",
+		"valueInterval": 30,
 		"bands" : [ {
 			"color" : "#00CC00",
 			"endValue" : 90,
@@ -45,8 +45,8 @@ var gaugeChart = AmCharts.makeChart("chartdiv", {
 });
 
 setInterval( getWattAtual, 3000 );
-//
-//// set random value
+
+// set random value
 //function randomValue() {
 //  var value = Math.round( Math.random() * 300 );
 //  if ( gaugeChart ) {
