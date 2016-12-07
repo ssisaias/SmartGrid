@@ -47,7 +47,7 @@
           </div>
           <div class=" col-xs-5 div-bordered">
             <form>
-              <div class="form-group">
+              <div class="form-group" action="@{tabs/home.html}" method="post">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Email"></input>
               </div>
@@ -55,11 +55,13 @@
                 <label for="Password">Senha</label>
                 <input type="password" class="form-control" id="Password" placeholder="Senha"></input>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
               <div class="form-group">
-                <a th:href="@{login/create_account.php}" class="text-info"><strong>Ainda não está cadastrado? Crie sua conta!</strong></a>
+                <button type="submit" class="btn btn-primary">Enviar</button>
               </div>
-            </form>
+              <div class="form-group">
+                <a th:href="@{login/create_account.html}" class="text-info"><strong>Ainda não está cadastrado? Crie sua conta!</strong></a>
+              </div>
+            </form  >
           </div>
         </div>
       </div>
