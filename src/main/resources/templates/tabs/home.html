@@ -1,15 +1,29 @@
-
-<? //inclui o cabecalho padrao
-  include '../header.php'; ?>
-
-<!--BEGIN PAGE-->
+<!doctype html>
+<!-- O layout base dessa pagina fica em layout/layout.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/layoutBase">
 <head>
-	<title>SmartGrid - Consumo em Tempo Real</title>
+
+<title>SmartGrid - Consumo em Tempo Real</title>
+<!-- Aqui vc coloca os css que só essa pagina precisa, os comuns ficam no layout exemplo:-->
+<link rel="stylesheet" th:href="@{http://www.w3schools.com/lib/w3.css}"></link>
+
 </head>
 
-<style type="text/css">#home{background-color: #215491;};</style>
+<section layout:fragment="content">
+	<!-- Conteudo da pagina vai aqui -->
 
-<!--END PAGE-->
+	<h3>Ola mundo</h3>
 
-<? //inclui o rodape padrao
-  include '../footer.php'; ?>
+	<!--<style type="text/css">#home{background-color: #215491;};</style>-->
+
+
+
+<!-- Conteudo da pagina termina aqui -->
+
+<!-- Aqui vc coloca os SCRIPT que só essa pagina precisa, os comuns ficam no layout -->
+
+</section>
+</html>
