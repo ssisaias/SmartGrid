@@ -14,6 +14,6 @@ public class LoginController {
 	
 	@RequestMapping(value={"/home"})
 	public String home(){
-		return "home";
+		return "tabs/home";
 	}
 }
