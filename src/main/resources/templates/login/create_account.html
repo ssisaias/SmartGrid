@@ -43,7 +43,7 @@
       <div class="row" style="padding-top: 10px;">
 
           <div class=" col-xs-8 col-xs-offset-2 div-bordered">
-            <form action="@{login/login.html}">
+            <form th:action="@{login}">
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Email"></input>
@@ -53,10 +53,10 @@
                 <input type="password" class="form-control" id="Password" placeholder="Senha"></input>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary col-xs-2 col-xs-offset-3">Enviar</button>
               </div>
-              <form action="@{login/login.html}">
-                <button type="submit" class="btn btn-primary push-right">Voltar</button>
+              <form th:action="@{login}">
+                <button type="submit" class="btn btn-primary push-right col-xs-2 col-xs-offset-2">Voltar</button>
               </form>
             </form>
           </div>

@@ -55,14 +55,14 @@
 			<!--NAVBAR-->
 
 			<ul class="nav nav-pills nav-justified ">
-				<li role="presentation" class="bordered" id="home"><a href="@{tabs/home.html}"
+				<li role="presentation" class="bordered" id="home"><a th:href="@{home}"
 					class="text-smartgrid"><strong>Consumo em Tempo Real</strong></a></li>
 				<li role="presentation" class="bordered" id="search"><a
-					href="@{tabs/search.html}" class="text-smartgrid"><strong>Consultar</strong></a></li>
+						th:href="@{search}" class="text-smartgrid"><strong>Consultar</strong></a></li>
 				<li role="presentation" class="bordered" id="notification"><a
-					href="@{tabs/notification.html}" class="text-smartgrid"><strong>Notificações</strong></a></li>
+						th:href="@{notification}" class="text-smartgrid"><strong>Notificações</strong></a></li>
 				<li role="presentation" class="bordered" id="account"><a
-					href="@{tabs/account.html}" class="text-smartgrid"><strong>Conta</strong></a></li>
+						th:href="@{account}" class="text-smartgrid"><strong>Conta</strong></a></li>
 			</ul>
 		</div>
 	</div>

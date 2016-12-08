@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
-	lang="pt-br">
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+  lang="pt-br">
   <head>
     <meta charset="utf-8"></meta>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
@@ -46,7 +46,7 @@
             Informaçoes
           </div>
           <div class=" col-xs-5 div-bordered">
-            <form>
+            <form class="form-group" th:action="@{home}" method="post">
               <div class="form-group" action="@{tabs/home.html}" method="post">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Email"></input>
@@ -59,9 +59,9 @@
                 <button type="submit" class="btn btn-primary">Enviar</button>
               </div>
               <div class="form-group">
-                <a th:href="@{login/create_account.html}" class="text-info"><strong>Ainda não está cadastrado? Crie sua conta!</strong></a>
+                <a th:href="@{create_account}" class="text-info"><strong>Ainda não está cadastrado? Crie sua conta!</strong></a>
               </div>
-            </form  >
+            </form>
           </div>
         </div>
       </div>
