@@ -9,14 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.qxd.smartgrid.model.Registro;
+import br.qxd.smartgrid.repository.RegistroRepository;
 
 @Controller()
 public class RegistroController {
+	
+	@Autowired
+	private RegistroRepository regRepository;
 	
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -26,17 +32,17 @@ public class RegistroController {
 	}
 	
 	@RequestMapping(value = { "/consumo/get", }, method = RequestMethod.POST)
-	public String buscarConsumo(HttpServletRequest request) {
+	public String buscarConsumo(HttpServletRequest request, Model model) {
 
 		try {
 			String inicio = request.getParameter("inicio");
 			String fim = request.getParameter("fim");
-			SimpleDateFormat formatBra = new SimpleDateFormat("dd/MM/yyyy");
-
-			Date dataIni = formatBra.parse(inicio);
-			Date dataFim = formatBra.parse(fim);
-			log.info(dataIni.toString() + " " + dataFim.toString());
-			
+			SimpleDateFormat formatOriginal = new SimpleDateFormat("yyyy-MM-dd");
+			Date dataIni = formatOriginal.parse(inicio);
+			Date dataFim = formatOriginal.parse(fim);
+			//log.info(dataIni.toString() + " " + dataFim.toString());
+			List<Registro> regs = regRepository.findByDataBetween(dataIni, dataFim);
+			model.addAttribute("listaConsumo", regs);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
