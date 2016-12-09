@@ -43,37 +43,37 @@
       <div class="row" style="padding-top: 10px;">
 
           <div class=" col-xs-8 col-xs-offset-2 div-bordered">
-            <form th:action="@{/usuario/novo}" method="post">
+            <form th:action="@{/create_account}" method="post" th:object="${usuario}">
               <div class="form-group">
                 <label for="nome">Nome</label>
-                <input class="form-control" id="nome" placeholder="João Lopes Gonçalves"></input>
+                <input class="form-control" id="nome" th:field="*{nome}" placeholder="João Lopes Gonçalves"></input>
               </div>
               <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input class="form-control" id="cpf" placeholder="123.456.789-01"></input>
+                <input class="form-control" id="cpf" th:field="*{cpf}" placeholder="123.456.789-01"></input>
               </div>
               <div class="form-group">
                 <label for="cnpj">CNPJ</label>
-                <input class="form-control" id="cnpj" placeholder="12.345.678/1234-56"></input>
+                <input class="form-control" id="cnpj" th:field="*{cnpj}" placeholder="12.345.678/1234-56"></input>
               </div>
               <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input class="form-control" id="telefone" placeholder="(99) 12345-6789"></input>
+                <input class="form-control" id="telefone" th:field="*{telefone}" placeholder="(99) 12345-6789"></input>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="meuemail@dominio.com"></input>
+                <input type="email" class="form-control" id="email" th:field="*{login}" placeholder="meuemail@dominio.com"></input>
               </div>
               <div class="form-group">
                 <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="**********"></input>
+                <input type="password" class="form-control" id="senha" th:field="*{senha}" placeholder="**********"></input>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary col-xs-2 col-xs-offset-3">Enviar</button>
               </div>
-              <form th:action="@{login}">
+              <a href="/login">
                 <button type="submit" class="btn btn-primary push-right col-xs-2 col-xs-offset-2">Voltar</button>
-              </form>
+              </a>
             </form>
           </div>
         
