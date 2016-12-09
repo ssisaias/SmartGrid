@@ -12,10 +12,7 @@ public class RoutingController {
 	public String login(){
 		return "/login";
 	}
-	@RequestMapping(value={"/create_account"})
-	public String create_account(){
-		return "login/create_account";
-	}
+	
 	@RequestMapping(value={"/create_address"})
 	public String create_address(){
 		return "login/create_address";
