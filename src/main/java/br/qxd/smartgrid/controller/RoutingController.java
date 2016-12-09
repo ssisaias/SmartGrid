@@ -21,10 +21,6 @@ public class RoutingController {
 	public String home(){
 		return "tabs/home";
 	}
-	@RequestMapping(value={"/search"})
-	public String search(){
-		return "tabs/search";
-	}
 	@RequestMapping(value={"/notification"})
 	public String notification(){
 		return "tabs/notification";
