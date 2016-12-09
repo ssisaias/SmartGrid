@@ -10,7 +10,6 @@ public class RoutingController {
 	
 	@RequestMapping(value = "/login",  method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(){
-	
 		return "/login";
 	}
 	@RequestMapping(value={"/create_account"})
