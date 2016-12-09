@@ -48,7 +48,7 @@ setInterval( getWattAtual, 3000 );
 
 function getWattAtual() {
 	$.ajax({
-		url : 'http://localhost:8080/api/getconsumo',
+		url : 'https://localhost:8080/api/getconsumo',
 		dataType : 'json',
 		success : function(data) {
 			var totalItems = data.length;
