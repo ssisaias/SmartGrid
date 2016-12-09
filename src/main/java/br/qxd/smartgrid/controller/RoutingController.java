@@ -16,6 +16,10 @@ public class RoutingController {
 	public String create_account(){
 		return "login/create_account";
 	}
+	@RequestMapping(value={"/create_address"})
+	public String create_address(){
+		return "login/create_address";
+	}
 	@RequestMapping(value={"/home"})
 	public String home(){
 		return "tabs/home";
