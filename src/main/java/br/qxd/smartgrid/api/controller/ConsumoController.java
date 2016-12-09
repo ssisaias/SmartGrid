@@ -18,20 +18,20 @@ import br.qxd.smartgrid.model.Registro;
 import br.qxd.smartgrid.service.RegistroService;
 
 
-@RestController
+@RestController()
 public class ConsumoController {
 
 	@Autowired
 	private RegistroService regServ;
 
 	//retorna uma lista exemplo de data/watt
-	@RequestMapping(value = {"/getconsumo"}, method=RequestMethod.GET)
+	@RequestMapping(value = {"/api/getconsumo"}, method=RequestMethod.GET)
 	public @ResponseBody List<Registro> getConsumoTotal(){
 		return regServ.findAll();
 	}
 	
 	//setta o consumo no banco de dados
-	@RequestMapping(value = {"/setconsumo"}, method=RequestMethod.GET)
+	@RequestMapping(value = {"/api/setconsumo"}, method=RequestMethod.GET)
 	public @ResponseBody String setConsumov2( HttpServletRequest request , @RequestParam("watts") String watts, @RequestParam(required=true,name="devid") String id, HttpServletResponse response){
 		if (id.equals("ard000001c000001")) {
 			System.out.println("recebido watts: " + watts);

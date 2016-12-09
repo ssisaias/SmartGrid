@@ -42,6 +42,11 @@ public class RegistroController {
 			Date dataFim = formatOriginal.parse(fim);
 			//log.info(dataIni.toString() + " " + dataFim.toString());
 			List<Registro> regs = regRepository.findByDataBetween(dataIni, dataFim);
+			float total=0;
+			for (Registro registro : regs) {
+				total += registro.getTotalWatts();
+			}
+			model.addAttribute("total", total);
 			model.addAttribute("listaConsumo", regs);
 		} catch (ParseException e) {
 			e.printStackTrace();

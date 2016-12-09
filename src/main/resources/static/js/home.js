@@ -46,24 +46,9 @@ var gaugeChart = AmCharts.makeChart("chartdiv", {
 
 setInterval( getWattAtual, 3000 );
 
-// set random value
-//function randomValue() {
-//  var value = Math.round( Math.random() * 300 );
-//  if ( gaugeChart ) {
-//    if ( gaugeChart.arrows ) {
-//      if ( gaugeChart.arrows[ 0 ] ) {
-//        if ( gaugeChart.arrows[ 0 ].setValue ) {
-//          gaugeChart.arrows[ 0 ].setValue( value );
-//          gaugeChart.axes[ 0 ].setBottomText( value + " kW" );
-//        }
-//      }
-//    }
-//  }
-//}
-
 function getWattAtual() {
 	$.ajax({
-		url : 'http://localhost:8080/getconsumo',
+		url : 'http://localhost:8080/api/getconsumo',
 		dataType : 'json',
 		success : function(data) {
 			var totalItems = data.length;
@@ -81,7 +66,7 @@ function getWattAtual() {
 			}
 		},
 		error : function() {
-			alert('Erro ao obter dados do servidor');
+			$("#wattsBig").text('Falha na comunicação. Nenhum dado recebido')
 		}
 	});
 }
