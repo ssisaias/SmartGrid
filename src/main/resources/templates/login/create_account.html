@@ -45,12 +45,28 @@
           <div class=" col-xs-8 col-xs-offset-2 div-bordered">
             <form th:action="@{login}">
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email"></input>
+                <label for="nome">Nome</label>
+                <input class="form-control" id="nome" placeholder="João Lopes Gonçalves"></input>
               </div>
               <div class="form-group">
-                <label for="Password">Senha</label>
-                <input type="password" class="form-control" id="Password" placeholder="Senha"></input>
+                <label for="cpf">CPF</label>
+                <input class="form-control" id="cpf" placeholder="123.456.789-01"></input>
+              </div>
+              <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input class="form-control" id="cnpj" placeholder="12.345.678/1234-56"></input>
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input class="form-control" id="telefone" placeholder="(99) 12345-6789"></input>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="meuemail@dominio.com"></input>
+              </div>
+              <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="**********"></input>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary col-xs-2 col-xs-offset-3">Enviar</button>
