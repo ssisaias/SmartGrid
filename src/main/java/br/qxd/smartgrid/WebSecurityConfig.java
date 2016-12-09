@@ -3,6 +3,7 @@ package br.qxd.smartgrid;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,15 +19,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	//configuração de login
 	@Autowired
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-		
-	  auth.inMemoryAuthentication().withUser("usuario").password("senha").roles("USER");
-	  
+	  auth.inMemoryAuthentication().withUser("usuario@email.com").password("merda").roles("USER"); 
 //	  auth.jdbcAuthentication().dataSource(dataSource)
 //	  .usersByUsernameQuery(
 //			"select login,senha,1 from usuario where login=?")
 //	  .authoritiesByUsernameQuery(
-//			"select login,'ROLE_USER' from usuario where login=?");
-	  
+//			"select login,papel from usuario where login=?");
+//	  
 	}	
 	
 	@Override
@@ -35,8 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 http.csrf().disable();
 	 http
 		 .authorizeRequests()
-		 .antMatchers("/**").permitAll()
-		 .antMatchers("/css/**", "/js/**","/img/**","/public/**").permitAll()
+		 .antMatchers("/css/**","/font-awesome/**", "/js/**","/img/**").permitAll()
+		 .antMatchers("/**").authenticated()
          .and()
      .formLogin()
          .loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/home",true)

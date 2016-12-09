@@ -14,17 +14,20 @@
 
 <section layout:fragment="content">
 	<!-- Conteudo da pagina vai aqui -->
-	<br></br>
-	<h2>Esse texto vem de home.html</h2>
-	
-	<h4>Os layout fica em um arquivo separado layout/_layout</h4>
-	
-	<h6>qualquer elemento do bootstrap pode ser adicionado aqui</h6>
-	<style type="text/css">#account{background-color: #215491;}</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10">
+				
+			</div>
+			<div class="col-xs-2 div-bordered">
+				<a th:href="@{/logout}">
+					<button type="button" class="btn btn-danger">Sair</button>
+				</a>
+			</div>
+		</div>
+	</div>
 
-
-
-<!-- Conteudo da pagina termina aqui -->
+	<!-- Conteudo da pagina termina aqui -->
 
 <!-- Aqui vc coloca os SCRIPT que só essa pagina precisa, os comuns ficam no layout -->
 
