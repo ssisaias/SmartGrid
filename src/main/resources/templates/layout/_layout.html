@@ -60,8 +60,12 @@
 			<ul class="nav nav-pills nav-justified ">
 				<li role="presentation" class="bordered" id="home"><a th:href="@{home}"
 					class="text-smartgrid"><strong>Consumo em Tempo Real</strong></a></li>
-				<li role="presentation" class="bordered" id="search"><a
-						th:href="@{/search}" class="text-smartgrid"><strong>Consultar</strong></a></li>
+				<li role="presentation" class="dropdown bordered" id="search">
+					<a href="#" data-toggle="dropdown" class="text-smartgrid" id="dropdown-search-btn" role="button" aria-has-popup="true" aria-expanded="false" ><strong>Consultar</strong></a>
+					<ul class="dropdown-menu bordered" id="menu-search" aria-labelledby="dropdown-search-btn">
+						<li id="search-period"><a th:href="@{search}" class="text-smartgrid"><strong>Consultar por Período</strong></a></li>
+					</ul>
+				</li>
 				<li role="presentation" class="bordered" id="notification"><a
 						th:href="@{/notification}" class="text-smartgrid"><strong>Notificações</strong></a></li>
 				<li role="presentation" class="bordered" id="account"><a
