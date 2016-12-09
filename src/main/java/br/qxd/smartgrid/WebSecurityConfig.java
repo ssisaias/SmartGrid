@@ -20,12 +20,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 	  auth.inMemoryAuthentication().withUser("usuario@email.com").password("merda").roles("USER"); 
-//	  auth.jdbcAuthentication().dataSource(dataSource)
-//	  .usersByUsernameQuery(
-//			"select login,senha,1 from usuario where login=?")
-//	  .authoritiesByUsernameQuery(
-//			"select login,papel from usuario where login=?");
-//	  
+	  auth.jdbcAuthentication().dataSource(dataSource)
+	  .usersByUsernameQuery(
+			"select login,senha,1 from usuario where login=?")
+	  .authoritiesByUsernameQuery(
+			"select us.login,pap.nome from usuario as us,usuario_papel as pap where us.login=? and us.papel_id=pap.id");
 	}	
 	
 	@Override
