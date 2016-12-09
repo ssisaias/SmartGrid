@@ -105,7 +105,30 @@ public class Usuario {
 	public void setEndereco_cobranca(Endereco_usuario endereco_cobranca) {
 		this.endereco_cobranca = endereco_cobranca;
 	}
-	
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	
 	
 }
