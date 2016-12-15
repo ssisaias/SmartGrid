@@ -53,9 +53,19 @@
 				<div th:if="${mensagemSucesso}" class="alert alert-info">
 					<strong th:text="${mensagemSucesso}"></strong>
 				</div>
-				<div class="col-xs-offset-1 col-xs-5 div-bordered">
-					Informaçoes</div>
-				<div class=" col-xs-5 div-bordered">
+				<div class="col-xs-offset-1 col-xs-5">
+					<h4>
+						<strong>Sobre o SmartGrid</strong>
+					</h4>
+					<p class="text-info text-justify">
+						O SmartGrid é um sistema online para o monitoramento da rede doméstica de energia do usuário. <!--Entre outras funções, é--> É possível consultar o consumo através de verificações em tempo real e de registros armazenados.
+					</p>
+					<p class="text-info text-justify">
+						Para que o sistema colete os dados de consumo, é necessário que o sistema receba as informações do cliente, através de um Arduino confeccionado especificamente para esta aplicação.
+					</p>
+
+				</div>
+				<div class=" col-xs-5">
 					<form class="form-group" action="/login" name="loginform"
 						method="post">
 						<div class="form-group">
