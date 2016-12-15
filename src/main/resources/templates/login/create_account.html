@@ -42,7 +42,7 @@
     <div class="container">
       <div class="row" style="padding-top: 10px;">
 
-          <div class=" col-xs-8 col-xs-offset-2 div-bordered">
+          <div class=" col-xs-8 col-xs-offset-2">
             <form th:action="@{/create_account}" method="post" th:object="${usuario}">
               <div class="form-group">
                 <label for="nome">Nome</label>
@@ -72,7 +72,7 @@
                 <button type="submit" class="btn btn-primary col-xs-2 col-xs-offset-3">Enviar</button>
               </div>
               <a href="/login">
-                <button type="submit" class="btn btn-primary push-right col-xs-2 col-xs-offset-2">Voltar</button>
+                <button class="btn btn-primary push-right col-xs-2 col-xs-offset-2">Voltar</button>
               </a>
             </form>
           </div>
