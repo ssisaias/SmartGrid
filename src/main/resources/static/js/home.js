@@ -48,7 +48,10 @@ setInterval( getWattAtual, 3000 );
 
 function getWattAtual() {
 	$.ajax({
-		url : 'https://smartgrid-web.herokuapp.com/api/getconsumo',
+		//web
+		//url : 'https://smartgrid-web.herokuapp.com/api/getconsumo',
+		//local
+		url : 'http://localhost:8080/api/getconsumo',
 		dataType : 'json',
 		success : function(data) {
 			var totalItems = data.length;

@@ -19,13 +19,14 @@ public class RoutingController {
 	
 	@RequestMapping(value = "/login",  method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(HttpServletRequest request, HttpSession session){
-		String login = request.getUserPrincipal().getName();
-		//Buscar usuario pelo login
-		Usuario usr = userSvc.findByLogin(login);
-		if (usr == null)
-			//Tratar se tiver nulo
-
-		session.setAttribute("user_logged", usr);
+//		sessão, ta com bug
+//		String login = request.getUserPrincipal().getName();
+//		//Buscar usuario pelo login
+//		Usuario usr = userSvc.findByLogin(login);
+//		if (usr == null)
+//			//Tratar se tiver nulo
+//
+//		session.setAttribute("user_logged", usr);
 
 		return "login";
 	}
