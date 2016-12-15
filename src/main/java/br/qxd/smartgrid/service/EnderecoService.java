@@ -14,8 +14,8 @@ public class EnderecoService {
 	@Autowired
 	private Endereco_usuarioRepository endRepo;
 
-	public <S extends Endereco_usuario> S save(S arg0) {
-		S result = endRepo.save(arg0);
+	public <S extends Endereco_usuario> S save(S end) {
+		S result = endRepo.save(end);
 		return result;
 	}
 

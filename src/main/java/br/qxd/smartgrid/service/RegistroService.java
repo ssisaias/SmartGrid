@@ -15,8 +15,8 @@ public class RegistroService {
 	@Autowired
 	private RegistroRepository regRepo;
 
-	public <S extends Registro> S save(S arg0) {
-		S result = regRepo.save(arg0);
+	public <S extends Registro> S save(S reg) {
+		S result = regRepo.save(reg);
 		return result;
 	}
 

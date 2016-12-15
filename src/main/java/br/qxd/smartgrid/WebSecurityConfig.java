@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	//configuração de login
 	@Autowired
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-	  auth.inMemoryAuthentication().withUser("usuario@email.com").password("merda").roles("USER"); 
+	  auth.inMemoryAuthentication().withUser("usuario@email.com").password("12345").roles("USER"); 
 	  auth.jdbcAuthentication().dataSource(dataSource)
 	  .usersByUsernameQuery(
 			"select login,senha,1 from usuario where login=?")
