@@ -48,7 +48,7 @@ setInterval( getWattAtual, 3000 );
 
 function getWattAtual() {
 	$.ajax({
-		url : 'http://localhost:8080/api/getconsumo',
+		url : 'https://smartgrid-web.herokuapp.com/api/getconsumo',
 		dataType : 'json',
 		success : function(data) {
 			var totalItems = data.length;
@@ -60,6 +60,7 @@ function getWattAtual() {
 						if (gaugeChart.arrows[0].setValue) {
 							gaugeChart.arrows[0].setValue(value);
 							gaugeChart.axes[0].setBottomText(value + " kW");
+							$("#wattsBig").text(value + 'kW de consumo');
 						}
 					}
 				}
